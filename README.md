@@ -79,6 +79,6 @@ class InfosResource() {
 
 ## Other branches
 
-Checkout the other branches for different problems:
+Checkout the other branches:
  - `master`: working simple demo
  - `rest-client`: Trying to use RestClient in Kotlin
