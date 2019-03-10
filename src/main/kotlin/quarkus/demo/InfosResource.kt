@@ -7,12 +7,16 @@ import javax.ws.rs.Produces
 import javax.ws.rs.core.MediaType
 
 @Path("/infos")
-class InfosResource {
+class InfosResource() {
+
+    private var infosService: InfosService? = null
 
     @Inject
-    private lateinit var infosService: InfosService
+    constructor(infosService: InfosService):this() {
+        this.infosService = infosService
+    }
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    fun hello() = infosService.hello()
+    fun hello() = infosService?.hello()
 }
