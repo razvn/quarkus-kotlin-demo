@@ -122,6 +122,6 @@ Got no clue what to do next.
 
 ## Other branches
 
-Checkout the other branches for different problems:
+Checkout the other branchess:
  - `master`: working simple demo
  - `constructor-injection`: constructor injection in Kotlin (**SOLVED**)
