@@ -24,3 +24,14 @@ Checkout the other branches for different problems:
  - `master`: working simple demo
  - `constructor-injection`: trying to use constructor injection in Kotlin
  - `rest-client`: Trying to use RestClient in Kotlin
+
+
+Project created with:
+```
+ mvn io.quarkus:quarkus-maven-plugin:0.11.0:create \                                                     12:28:15 
+    -DprojectGroupId=quarkus.demo \
+    -DprojectArtifactId=quarkus-kotlin \
+    -DclassName="quarkus.demo.InfosResource" \
+    -Dpath="/infos" \
+        -Dextensions="kotlin, smallrye-rest-client, resteasy-jsonb"
+```
