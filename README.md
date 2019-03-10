@@ -18,6 +18,8 @@ I followed the Java example from [Using the Rest Client](https://quarkus.io/guid
 
 I was planning to use the service [JsonPlaceHolder todo Service](https://jsonplaceholder.typicode.com/todos) 
 
+`https://jsonplaceholder.typicode.com/todos`
+
 Added the model:
 
 ```kotlin
