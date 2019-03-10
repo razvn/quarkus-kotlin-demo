@@ -20,18 +20,18 @@ Test end point:
 curl http://120.0.0.1:8080/infos
 ```
 
-Checkout the other branches for different problems:
+Checkout the other branches:
  - `master`: working simple demo
  - `constructor-injection`: constructor injection in Kotlin (**SOLVED**)
- - `rest-client`: Trying to use RestClient in Kotlin
+ - `rest-client`: Problem using the Rest Client in Kotlin
 
 
 Project created with:
 ```
- mvn io.quarkus:quarkus-maven-plugin:0.11.0:create \                                                     12:28:15 
+ mvn io.quarkus:quarkus-maven-plugin:0.11.0:create \
     -DprojectGroupId=quarkus.demo \
     -DprojectArtifactId=quarkus-kotlin \
     -DclassName="quarkus.demo.InfosResource" \
     -Dpath="/infos" \
-        -Dextensions="kotlin, smallrye-rest-client, resteasy-jsonb"
+    -Dextensions="kotlin, smallrye-rest-client, resteasy-jsonb"
 ```
