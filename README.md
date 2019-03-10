@@ -22,7 +22,7 @@ curl http://120.0.0.1:8080/infos
 
 Checkout the other branches for different problems:
  - `master`: working simple demo
- - `constructor-injection`: trying to use constructor injection in Kotlin
+ - `constructor-injection`: constructor injection in Kotlin (**SOLVED**)
  - `rest-client`: Trying to use RestClient in Kotlin
 
 
