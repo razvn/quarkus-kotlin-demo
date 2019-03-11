@@ -5,7 +5,7 @@ A test repo of [Quarkus](https://quarkus.io) and its Kotlin support.
 **Checkout the other branches:**
  - `master`: working simple demo
  - `constructor-injection`: constructor injection in Kotlin (**SOLVED**)
- - `rest-client`: Problem using the Rest Client in Kotlin (**PARTIALLY SOLVED**)
+ - `rest-client`: Using the Rest Client in Kotlin (**SOLVED**)
 
 
 Don't forget to add `@ApplicationScoped` to all-open plugin as by default only `@Path` is added.
