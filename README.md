@@ -12,7 +12,7 @@ Test end point:
 curl http://120.0.0.1:8080/infos
 ```
 
-## Rest client Kotlin problem (**SOLVED-PARTIALLY**)
+## Rest client Kotlin problem (**SOLVED**)
 
 I followed the Java example from [Using the Rest Client](https://quarkus.io/guides/rest-client-guide)
 
@@ -164,7 +164,7 @@ data class ToDo(
 )
 ```
  
-## Remaining problem
+## Remaining problem (**SOLVED**)
 
 Yet if I call:
 ```
@@ -174,6 +174,21 @@ I get a list with an item with default constructor....
 ```json
 [{"completed":false}]
 ```
+----
+**SOLUTION**
+
+Turns out the data class members can't `val`, changing to `var` fixes the problem, so `ToDo` becomes:
+
+```kotlin
+data class ToDo(
+        var userId: Int? = null,
+        var id: Int? = null,
+        var title: String? = null,
+        var completed: Boolean = false
+)
+```
+
+Now I get the full list of items!!!
 
 ## Other branches
 
