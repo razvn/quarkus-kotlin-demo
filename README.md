@@ -18,6 +18,8 @@ I followed the Java example from [Using the Rest Client](https://quarkus.io/guid
 
 I plan to use the service [JsonPlaceHolder todo Service](https://jsonplaceholder.typicode.com/todos) 
 
+`https://jsonplaceholder.typicode.com/todos`
+
 Added the model:
 
 ```kotlin
@@ -175,6 +177,6 @@ I get a list with an item with default constructor....
 
 ## Other branches
 
-Checkout the other branches for different problems:
+Checkout the other branches:
  - `master`: working simple demo
  - `constructor-injection`: constructor injection in Kotlin (**SOLVED**)
