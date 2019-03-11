@@ -12,11 +12,11 @@ Test end point:
 curl http://120.0.0.1:8080/infos
 ```
 
-## Rest client Kotlin problem
+## Rest client Kotlin problem (**SOLVED-PARTIALLY**)
 
 I followed the Java example from [Using the Rest Client](https://quarkus.io/guides/rest-client-guide)
 
-I was planning to use the service [JsonPlaceHolder todo Service](https://jsonplaceholder.typicode.com/todos) 
+I plan to use the service [JsonPlaceHolder todo Service](https://jsonplaceholder.typicode.com/todos) 
 
 Added the model:
 
@@ -116,7 +116,62 @@ Unsatisfied dependency for type quarkus.demo.ToDoService and qualifiers [@Defaul
         - declared on CLASS bean [types=[java.lang.Object, quarkus.demo.InfosResource], qualifiers=[@Default, @Any], target=quarkus.demo.InfosResource]
 ```
 
-Got no clue what to do next.
+## SOLVED Injection
+
+Injection problem can be solved using:
+
+```kotlin
+    @Inject
+    @field: RestClient
+    private lateinit var toDoService: ToDoService
+```
+
+Or constructor injection: 
+
+```kotlin
+@Path("/infos")
+class InfosResource() {
+    private var infosService: InfosService? = null
+    private var toDoService: ToDoService? = null
+
+    @Inject
+    constructor(infosService: InfosService, @RestClient toDoService: ToDoService):this() {
+        this.infosService = infosService
+        this.toDoService = toDoService
+    }
+
+    @GET
+    @Path("/")
+    @Produces(MediaType.TEXT_PLAIN)
+    fun hello() = infosService?.hello()
+
+    @GET
+    @Path("/todos")
+    @Produces(MediaType.APPLICATION_JSON)
+    fun todos() = toDoService?.getToDos()
+}
+```
+
+Also, in order to get an answer `ToDo` data class must have default constructor so it becomes:
+```kotlin
+data class ToDo(
+        val userId: Int? = null,
+        val id: Int? = null,
+        val title: String? = null,
+        val completed: Boolean = false
+)
+```
+ 
+## Remaining problem
+
+Yet if I call:
+```
+curl http://localhost:8080/infos/todos    
+```
+I get a list with an item with default constructor....
+```json
+[{"completed":false}]
+```
 
 ## Other branches
 

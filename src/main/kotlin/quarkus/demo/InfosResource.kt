@@ -8,21 +8,25 @@ import javax.ws.rs.Produces
 import javax.ws.rs.core.MediaType
 
 @Path("/infos")
-class InfosResource {
+class InfosResource() {
+
+    private var infosService: InfosService? = null
+
+    private var toDoService: ToDoService? = null
 
     @Inject
-    private lateinit var infosService: InfosService
-
-    @Inject
-    @RestClient
-    private lateinit var toDoService: ToDoService
+    constructor(infosService: InfosService, @RestClient toDoService: ToDoService):this() {
+        this.infosService = infosService
+        this.toDoService = toDoService
+    }
 
     @GET
+    @Path("/")
     @Produces(MediaType.TEXT_PLAIN)
-    fun hello() = infosService.hello()
+    fun hello() = infosService?.hello()
 
     @GET
     @Path("/todos")
     @Produces(MediaType.APPLICATION_JSON)
-    fun todos() = toDoService.getToDos()
+    fun todos() = toDoService?.getToDos()
 }
