@@ -191,9 +191,9 @@ data class ToDo(
 Now I get the full list of items!!!
 
 
-## BUT...  (**STILL A PROBLEM**)
+## Native build problem
 
-... trying to build the native image fails
+If building the native image fails
 
 ```
  mvn clean package -Pnative
@@ -209,6 +209,8 @@ Now I get the full list of items!!!
  org.apache.maven.lifecycle.LifecycleExecutionException: Failed to execute goal io.quarkus:quarkus-maven-plugin:0.11.0:native-image (default) on project quarkus-kotlin: Failed to generate a native image
 
 ```
+
+Reboot the computer may fix the problem.
 
 
 ## Other branches
